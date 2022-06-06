@@ -1,0 +1,8 @@
+vc_creds: {user: "msabadac@vsphere.local", pass: "{{ vc_user01 }}"}
+vc_host: 198.19.202.251
+vc_datacenter: NYC
+vc_prodvm: CLUS_User01_ProdVM
+vc_prodvm_mac_backend: 00:50:56:ad:df:10
+vc_pg_backend: CLUS-user01|CLUS_user01_AP|EPG_Backend
+vc_prodvm_mac_db: 00:50:56:ad:32:25
+vc_pg_db: CLUS-user01|CLUS_user01_AP|EPG_DB

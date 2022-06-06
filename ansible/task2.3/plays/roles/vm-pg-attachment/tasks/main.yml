@@ -1,0 +1,23 @@
+- name: Apply the backend portgroup to the production VM
+  community.vmware.vmware_guest_network:
+    hostname: '{{ vc_host }}'
+    username: '{{ vc_creds.user }}'
+    password: '{{ vc_creds.pass }}'
+    datacenter: '{{ vc_datacenter }}'
+    name: '{{ vc_prodvm }}'
+    mac_address: '{{ vc_prodvm_mac_backend }}'
+    network_name: '{{ vc_pg_backend }}'
+    state: present
+    validate_certs: no
+
+- name: Apply the dbnd portgroup to the production VM
+  community.vmware.vmware_guest_network:
+    hostname: '{{ vc_host }}'
+    username: '{{ vc_creds.user }}'
+    password: '{{ vc_creds.pass }}'
+    datacenter: '{{ vc_datacenter }}'
+    name: '{{ vc_prodvm }}'
+    mac_address: '{{ vc_prodvm_mac_db }}'
+    network_name: '{{ vc_pg_db }}'
+    state: present
+    validate_certs: no

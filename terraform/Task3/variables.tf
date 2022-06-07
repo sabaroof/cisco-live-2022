@@ -11,7 +11,7 @@ variable "creds" {
   }
 }
 
-#CHANGE BELOW TENANT VALUES:
+
 
 variable "tenant_stuff" {
   type = object({

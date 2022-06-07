@@ -1,0 +1,7 @@
+- name: Stretching the tenant
+  hosts: ndo
+  gather_facts: false
+  connection: httpapi
+
+  roles:
+    - cloud-tenant-stretch

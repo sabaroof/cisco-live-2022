@@ -26,3 +26,18 @@ variable "creds" {
     url      = "https://0.0.0.0/"    #Insert NDO IP
   }
 }
+
+
+
+variable "tenant_stuff" {
+  type = object({
+    tenant_name  = string
+    display_name = string
+    description  = string
+  })
+  default = {
+    tenant_name  = "CLUS_TENANT_XX" # change XX to your assigned user name 
+    display_name = "CLUS_TENANT_XX" # change XX to your assigned user name 
+    description  = " Terraform Created Tenant for user XX" # change XX to your assigned user name 
+  }
+}

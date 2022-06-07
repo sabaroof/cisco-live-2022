@@ -27,7 +27,7 @@ variable "creds" {
   }
 }
 
-
+# Populate Tenant Values
 
 variable "tenant_stuff" {
   type = object({

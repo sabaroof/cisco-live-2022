@@ -1,8 +1,6 @@
 #  Default values can be defined here, which can be overwritten by values defined in terraform.tfvars
 #  You will also create a overwrite.tf file where you can keep confidential values
 
-# REMEMBER TO CHANGE TENANT VALUES BELOW:
-
 variable "creds" {
   type = map(any)
   default = {
@@ -22,9 +20,9 @@ variable "tenant_stuff" {
     description  = string
   })
   default = {
-    tenant_name  = "CLUS_TENANT_XX" # change XX to your assigned user name 
-    display_name = "CLUS_TENANT_XX" # change XX to your assigned user name 
-    description  = " Terraform Created Tenant for user XX" # change XX to your assigned user name 
+    tenant_name  = "CLUS_TENANT_XX" 
+    display_name = "CLUS_TENANT_XX" 
+    description  = " Terraform Created Tenant for user XX" 
   }
 }
 

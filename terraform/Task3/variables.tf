@@ -37,10 +37,6 @@ variable "template_name" {
   default = "some_value"
 }
 
-variable "template_name_1" {
-  type    = string
-  default = "some_value"
-}
 
 variable "aws_site_name" {
   type    = string

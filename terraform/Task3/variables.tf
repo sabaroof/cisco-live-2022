@@ -48,22 +48,7 @@ variable "vrf_name" {
   default = "some_value"
 }
 
-variable "bd_name" {
-  type    = string
-  default = "some_value"
-}
-
 variable "anp_name" {
-  type    = string
-  default = "some_value"
-}
-
-variable "epg_name" {
-  type    = string
-  default = "some_value"
-}
-
-variable "epg_selector_value" {
   type    = string
   default = "some_value"
 }

@@ -4,9 +4,9 @@
 
 aws_site_name = "AWSSite" # the site name for the AWS site as seen on ND
 
-
-schema_name = "CLUS_Schema_XX"  # XX is your user name 
-template_name= "CLUS_TEMPLATE"            # use a template name as you wish
+# Remember that the tenant values are stored in Variables.tf, please change them there.
+schema_name = "CLUS_SCHEMA_XX"  # XX is your user name 
+template_name= "CLUS_TEMPLATE_XX"            # use a template name as you wish
 vrf_name      = "CLUS_VRF"                       # use a vrf name as you wish
 bd_name       = "CLUS_BD"                        # use a bd name as you wish
 anp_name      = "CLUS_ANP"                       # use a ANP name as you wish

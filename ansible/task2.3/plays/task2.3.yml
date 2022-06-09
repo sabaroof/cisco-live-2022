@@ -23,7 +23,7 @@
 - name: A Playbook for Task2 Step3 - deploying the services
   hosts: prodvm
   gather_facts: false
-  connection: httpapi
+  connection: ssh
 
   roles:
     - service-deployment-cli

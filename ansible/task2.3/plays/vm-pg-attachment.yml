@@ -1,7 +1,0 @@
-- name: Attaching the PGs
-  hosts: vcenter
-  gather_facts: false
-  connection: httpapi
-
-  roles:
-    - vm-pg-attachment

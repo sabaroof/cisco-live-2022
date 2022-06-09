@@ -4,6 +4,11 @@ apic_tenant: CLUS-user01
 apic_vrf: CLUS_VRF
 apic_vmm: nyc-dvs
 apic_lag: nyc-lag
+apic_bd_singlepage: BD_Singlepage
+apic_bd_singlepage_gw: 30.0.1.1
+apic_bd_singlepage_gw_mask: 24
+apic_bd_singlepage_subnet_name: singlepage_subnet
+apic_epg_singlepage: EPG_Singlepage
 apic_bd_frontend: BD_Frontend2
 apic_bd_frontend_gw: 20.0.1.1
 apic_bd_frontend_gw_mask: 24
@@ -20,4 +25,8 @@ apic_bd_db_gw_mask: 24
 apic_bd_db_subnet_name: db_subnet
 apic_epg_db: EPG_DB
 apic_ap: CLUS_user01_AP
+apic_contract: CLUS_Contract
+apic_subject: CLUS_Subject
+apic_filter: CLUS_Filter
+apic_filter_entry: CLUS_Filter_Entry
 

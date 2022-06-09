@@ -1,10 +1,17 @@
 vc_creds: {user: "msabadac@vsphere.local", pass: "{{ vc_user01 }}"}
 vc_host: 198.19.202.251
 vc_datacenter: NYC
-vc_prodvm: CLUS_User02_ProdVM
-vc_prodvm_mac_frontend: 00:50:56:ad:91:6a
+vc_prodvm: CLUS_User01_ProdVM
+vc_prodvm_creds: {user: "clusadmin", pass: "{{ vc_user01_prodvm }}"}
+vc_prodvm_mac_singlepage: 00:50:56:ad:0f:83
+vc_pg_singlepage: CLUS-user01|CLUS_user01_AP|EPG_Singlepage
+vc_prodvm_mac_frontend: 00:50:56:ad:38:8d
 vc_pg_frontend: CLUS-user01|CLUS_user01_AP|EPG_Frontend
-vc_prodvm_mac_backend: 00:50:56:ad:1c:c4
+vc_prodvm_mac_backend: 00:50:56:ad:df:10
 vc_pg_backend: CLUS-user01|CLUS_user01_AP|EPG_Backend
-vc_prodvm_mac_db: 00:50:56:ad:44:b5
+vc_prodvm_mac_db: 00:50:56:ad:32:25
 vc_pg_db: CLUS-user01|CLUS_user01_AP|EPG_DB
+vc_testvm: CLUS_User01_TestVM
+vc_testvm_creds: {user: "clus-test", pass: "{{ vc_user01_testvm }}"}
+vc_testvm_mac_singlepage: 00:50:56:ad:8c:75
+vc_testvm_mac_frontend: 00:50:56:ad:b8:b9

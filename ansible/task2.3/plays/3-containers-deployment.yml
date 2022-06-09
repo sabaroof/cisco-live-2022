@@ -1,6 +1,0 @@
-- name: Attaching the endpoints to correct portgroups and launching the container
-  hosts: prodvm
-  gather_facts: false
-
-  roles:
-    - 3-containers-deployment

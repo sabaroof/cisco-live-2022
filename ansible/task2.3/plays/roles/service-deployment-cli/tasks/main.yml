@@ -2,13 +2,17 @@
   ansible.builtin.shell:
     cmd: git clone https://github.com/sabaroof/cisco-live-2022.git
 
+- name: Configure IP for frontend interface
+  ansible.builtin.shell:
+    cmd: ip addr add 20.0.1.10/24 dev ens192 && ip link set ens192 up
+
 - name: Configure IP for backend interface
   ansible.builtin.shell:
     cmd: ip addr add 20.0.2.10/24 dev ens224 && ip link set ens224 up
 
 - name: Configure IP for db interface
   ansible.builtin.shell:
-    cmd: ip addr add 20.0.3.10/24 dev ens256 && ip link set ens224 up
+    cmd: ip addr add 20.0.3.10/24 dev ens256 && ip link set ens256 up
 
 - name: Run the compose
   ansible.builtin.shell:

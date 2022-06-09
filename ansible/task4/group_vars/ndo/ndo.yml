@@ -2,7 +2,7 @@ ndo_creds: {user: "CLUS-user01", pass: "{{ ndo_user01 }}"}
 ndo_host: 198.19.202.12
 ndo_tenant: CLUS_TENANT_01
 ndo_template: CLUS_TEMPLATE
-ndo_schema: CLUS_SCHEME_01
+ndo_schema: CLUS_SCHEMA_01
 ndo_vrf: CLUS_VRF
 ndo_anp: CLUS_ANP
 ndo_site_onprem: New York

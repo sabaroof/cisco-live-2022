@@ -7,7 +7,8 @@
     - { role: apic-object-creation, service: frontend }
     - { role: apic-object-creation, service: backend }
     - { role: apic-object-creation, service: db }
-    - contract-creation
+    - { role: contract-creation, consumer: frontend, provider: backend }
+    - { role: contract-creation, consumer: backend, provider: db }
 
 - name: A Playbook for Task2 Step3 - application of the portgroups with role reusal
   hosts: vcenter

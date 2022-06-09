@@ -1,27 +1,3 @@
-- name: Apply a portgroup to the production VM
-  community.vmware.vmware_guest_network:
-    hostname: '{{ vc_host }}'
-    username: '{{ vc_creds.user }}'
-    password: '{{ vc_creds.pass }}'
-    datacenter: '{{ vc_datacenter }}'
-    name: '{{ vc_prodvm }}'
-    mac_address: '{{ vc_prodvm_mac }}'
-    network_name: '{{ vc_pg }}'
-    state: present
-    validate_certs: no
-
-- name: Apply a portgroup to the test VM
-  community.vmware.vmware_guest_network:
-    hostname: "{{ vc_host }}"
-    username: '{{ vc_creds.user }}'
-    password: '{{ vc_creds.pass }}'
-    datacenter: "{{ vc_datacenter }}"
-    name: '{{ vc_testvm }}'
-    mac_address: '{{ vc_testvm_mac }}'
-    network_name: '{{ vc_pg }}'
-    state: present
-    validate_certs: no
-
 - name: Pull an image
   community.docker.docker_image:
     name: sabaroof/ciscolive2022:singlepage

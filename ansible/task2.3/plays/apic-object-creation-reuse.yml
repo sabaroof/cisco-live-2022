@@ -1,0 +1,9 @@
+- name: Creating the logical constructs necessary to attach an endpoint
+  hosts: apic
+  gather_facts: false
+  connection: httpapi
+
+  roles:
+    - { role: apic-object-creation-reuse, service: frontend }
+    - { role: apic-object-creation-reuse, service: backend }
+    - { role: apic-object-creation-reuse, service: db }

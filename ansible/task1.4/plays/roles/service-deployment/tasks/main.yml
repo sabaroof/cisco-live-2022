@@ -1,4 +1,4 @@
-- name: Apply the frontend portgroup to the production VM
+- name: Apply a portgroup to the production VM
   community.vmware.vmware_guest_network:
     hostname: '{{ vc_host }}'
     username: '{{ vc_creds.user }}'
@@ -10,7 +10,7 @@
     state: present
     validate_certs: no
 
-- name: Apply the frontend portgroup to the test VM
+- name: Apply a portgroup to the test VM
   community.vmware.vmware_guest_network:
     hostname: "{{ vc_host }}"
     username: '{{ vc_creds.user }}'
@@ -29,6 +29,19 @@
     docker_host: tcp://198.19.202.5:2375
     validate_certs: no
 
+- name: Create a docker network
+  community.docker.docker_network:
+    name: singlepage_net
+    ipam_config:
+      - subnet: 30.0.1.0/24
+        gateway: 30.0.1.1
+    driver: ipvlan
+    driver_options:
+      parent: '{{ vc_prodvm_int }}'
+      mode: l2
+    docker_host: tcp://198.19.202.5:2375
+    validate_certs: no
+
 - name: Run the container
   community.docker.docker_container:
     name: singlepage
@@ -37,5 +50,8 @@
     command: ["nginx", "-g", "'daemon off;'"]
     ports:
       - "80:80"
+    networks:
+      - name: singlepage_net
+        ipv4_address: 30.0.1.10
     docker_host: tcp://198.19.202.5:2375
     validate_certs: no

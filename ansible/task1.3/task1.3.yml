@@ -1,30 +1,29 @@
-- name: Playbook for Task1 Step7 - creating the ACI objects for single page attachment
-  hosts: apic1
+- name: Playbook for Task1 Step3 - creating the ACI objects for single page attachment
+  hosts: apic
   gather_facts: no
-  vars_files: inventory.yml
   connection: httpapi
 
   tasks:
 
-    - name: Create a BD for the frontend tier
+    - name: Create a BD for singlepage website
       cisco.aci.aci_bd:
-        host: '{{ apic_host }}'
-        username: '{{ apic_username }}'
+        host: 198.19.202.66
+        username: '{{ apic_user }}'
         password: '{{ apic_pass }}'
         tenant: '{{ apic_tenant }}'
-        vrf: 'CLUS_VRF'
-        bd: 'BD_Frontend'
+        vrf: CLUS_VRF
+        bd: BD_Singlepage
         validate_certs: no
         state: present
 
-    - name: Create frontend subnet
+    - name: Create a subnet for singlepage website
       cisco.aci.aci_bd_subnet:
-        host: '{{ apic_host }}'
-        username: '{{ apic_username }}'
+        host: 198.19.202.66
+        username: '{{ apic_user }}'
         password: '{{ apic_pass }}'
         tenant: '{{ apic_tenant }}'
-        bd: BD_Frontend
-        subnet_name: frontend_subnet
+        bd: BD_Singlepage
+        subnet_name: singlepage_subnet
         gateway: 30.0.1.1
         mask: 24
         validate_certs: no
@@ -32,35 +31,36 @@
 
     - name: Create an AP
       cisco.aci.aci_ap:
-        host: '{{ apic_host }}'
-        username: '{{ apic_username }}'
+        host: 198.19.202.66
+        username: '{{ apic_user }}'
         password: '{{ apic_pass }}'
         tenant: '{{ apic_tenant }}'
         ap: CLUS_user01_AP
         validate_certs: no
         state: present  
 
-    - name: Create frontend EPG
+    - name: Create an EPG for singlepage website
       cisco.aci.aci_epg:
-        host: '{{ apic_host }}'
-        username: '{{ apic_username }}'
+        host: 198.19.202.66
+        username: '{{ apic_user }}'
         password: '{{ apic_pass }}'
         tenant: '{{ apic_tenant }}'
-        bd: BD_Frontend
+        bd: BD_Singlepage
         ap: CLUS_user01_AP
-        epg: EPG_Frontend
+        epg: EPG_Singlepage
         validate_certs: no
         state: present  
 
-    - name: Attach the VMM domain to the created EPGs
+    - name: Attach the VMM domain to the created EPG
       cisco.aci.aci_epg_to_domain:
-        host: '{{ apic_host }}'
-        username: '{{ apic_username }}'
+        host: 198.19.202.66
+        username: '{{ apic_user }}'
         password: '{{ apic_pass }}'
         tenant: '{{ apic_tenant }}'
         ap: CLUS_user01_AP
-        epg: EPG_Frontend
+        epg: EPG_Singlepage
         domain: nyc-dvs
+        state: present
         domain_type: vmm
         vm_provider: vmware
         enhanced_lag_policy: nyc-lag

@@ -1,8 +1,9 @@
-vc_creds: {user: "msabadac@vsphere.local", pass: "{{ vc_user01 }}"}
+vc_creds: {user: "aciadmin@vsphere.local", pass: "{{ vc_user01 }}"}
 vc_host: 198.19.202.251
 vc_datacenter: NYC
 vc_prodvm: CLUS_User01_ProdVM
 vc_prodvm_creds: {user: "clusadmin", pass: "{{ vc_user01_prodvm }}"}
+vc_prodvm_mgmt_ip: 198.19.202.5
 vc_prodvm_mac_singlepage: 00:50:56:ad:0f:83
 vc_pg_singlepage: CLUS-user01|CLUS_user01_AP|EPG_Singlepage
 vc_prodvm_mac_frontend: 00:50:56:ad:38:8d

@@ -1,7 +1,0 @@
-vc_prodvm_creds: {user: "root", pass: "{{ vc_user01_prodvm }}"}
-prodvm_frontend_int: ens192
-prodvm_frontend_ip: 20.0.1.10/24
-prodvm_backend_int: ens224
-prodvm_backend_ip: 20.0.2.10/24
-prodvm_db_int: ens256
-prodvm_db_ip: 20.0.3.10/24

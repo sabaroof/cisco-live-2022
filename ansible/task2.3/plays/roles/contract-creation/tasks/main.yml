@@ -41,7 +41,7 @@
     tenant: '{{ apic_tenant }}'
     contract: '{{ apic_contract }}'
     subject: '{{ apic_subject }}'
-    reverse_filter: yes
+    reverse_filter: true
     state: present
     validate_certs: false
   delegate_to: localhost
@@ -70,9 +70,9 @@
     contract: '{{ apic_contract }}'
     contract_type: consumer
     state: present
-  validate_certs: false
+    validate_certs: false
   delegate_to: localhost
-  with_items: 
+  with_items:
     - "{{ consumer }}"
 
 - name: Bind the contract to provider EPG
@@ -86,7 +86,7 @@
     contract: '{{ apic_contract }}'
     contract_type: provider
     state: present
-  validate_certs: false
+    validate_certs: false
   delegate_to: localhost
-  with_items: 
+  with_items:
     - "{{ provider }}"

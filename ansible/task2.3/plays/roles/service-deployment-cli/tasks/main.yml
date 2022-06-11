@@ -1,19 +1,41 @@
 - name: Clone git repo with containers
-  ansible.builtin.shell:
-    cmd: git clone https://github.com/sabaroof/cisco-live-2022.git
+  ansible.builtin.git:
+    repo: 'https://github.com/sabaroof/cisco-live-2022.git'
+    dest: /root/github/
 
 - name: Configure IP for frontend interface
-  ansible.builtin.shell:
-    cmd: ip addr add 20.0.1.10/24 dev ens192 && ip link set ens192 up
+  ansible.builtin.command: "ip addr add '{{ prodvm_frontend_ip }}' dev '{{ prodvm_frontend_int }}'"
+  register: output
+  changed_when: output.rc != 0
+
+- name: Standup int for frontend interface
+  ansible.builtin.command: "ip link set '{{ prodvm_frontend_int }}' up"
+  register: output
+  changed_when: output.rc != 0
 
 - name: Configure IP for backend interface
-  ansible.builtin.shell:
-    cmd: ip addr add 20.0.2.10/24 dev ens224 && ip link set ens224 up
+  ansible.builtin.command: "ip addr add '{{ prodvm_backend_ip }}' dev '{{ prodvm_backend_int }}'"
+  register: output
+  changed_when: output.rc != 0
+
+- name: Standup int for backend interface
+  ansible.builtin.command: "ip link set '{{ prodvm_backend_int }}' up"
+  register: output
+  changed_when: output.rc != 0
 
 - name: Configure IP for db interface
-  ansible.builtin.shell:
-    cmd: ip addr add 20.0.3.10/24 dev ens256 && ip link set ens256 up
+  ansible.builtin.command: "ip addr add '{{ prodvm_db_ip }}' dev '{{ prodvm_db_int }}'"
+  register: output
+  changed_when: output.rc != 0
 
-- name: Run the compose
-  ansible.builtin.shell:
-    cmd: cd cisco-live-2022/ciscolive-containers/ && docker-compose up -d 
+- name: Standup int for db interface
+  ansible.builtin.command: "ip link set '{{ prodvm_db_int }}' up"
+  register: output
+  changed_when: output.rc != 0
+
+- name: Run compose
+  ansible.builtin.command: docker-compose up -d
+  args:
+    chdir: /root/github/ciscolive-containers
+  register: output
+  changed_when: output.rc != 0  

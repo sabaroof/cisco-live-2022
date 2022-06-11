@@ -6,9 +6,9 @@
     datacenter: '{{ vc_datacenter }}'
     name: "{{ vars['vc_' ~ item.0 ~ 'vm'] }}"
     mac_address: "{{ vars['vc_' ~ item.0 ~ 'vm_mac_' ~ item.1 ] }}"
-    network_name: "{{ vars['vc_pg_' ~ item.0] }}"
+    network_name: "{{ vars['vc_pg_' ~ item.1] }}"
     state: present
-    validate_certs: no
-  with_nested: 
+    validate_certs: false
+  with_nested:
     - "{{ vm }}"
     - "{{ service }}"

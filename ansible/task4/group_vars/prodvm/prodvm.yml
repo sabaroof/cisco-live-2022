@@ -1,1 +1,0 @@
-vc_prodvm_creds: {user: "root", pass: "{{ vc_user01_prodvm }}"}

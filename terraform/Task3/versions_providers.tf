@@ -1,5 +1,3 @@
-
-
 #  Define versions 
 
 terraform {
@@ -12,9 +10,7 @@ terraform {
   required_version = ">= 1.1.6"
 }
 
-
-
-#  Define Providers  If using local ND user, comment out the domain.
+#  Define Providers; if using local ND user, comment out the domain.
 
 provider "mso" {
   username = var.creds.username
@@ -24,4 +20,3 @@ provider "mso" {
   insecure = "true"
   platform = "nd"
 }
-

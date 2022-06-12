@@ -3,7 +3,6 @@ stages:
         - plan
         - apply
 
-
 image: 
         name: hashicorp/terraform:light
         entrypoint:
@@ -18,17 +17,14 @@ before_script:
 validate:
         stage: validate
         script: 
-       
-                - terraform  validate
-
+                - terraform validate
 
 plan:
         stage: plan
         script:
                 - terraform plan
         dependencies:
-                - validate
-                  
+                - validate              
 
 apply:
         stage: apply

@@ -1,6 +1,5 @@
 #  use this override.tf to put in confidential data
 
-
 #  Populate values based on your AWS values
 variable "awsstuff" {
   type = object({
@@ -15,20 +14,17 @@ variable "awsstuff" {
   }
 }
 
-
-
 #  Populate values based on your ND cofigiration
 variable "creds" {
   type = map(any)
   default = {
-    username = "admin"              
-    password = "000000000000000000"  # Insert admin password for NDO 
+    username = "CLUS-userXX"              
+    password = "000000000000000000"  
     url      = "https://0.0.0.0/"    #Insert NDO IP
   }
 }
 
 # Populate Tenant Values
-
 variable "tenant_stuff" {
   type = object({
     tenant_name  = string

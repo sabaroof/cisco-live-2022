@@ -1,9 +1,0 @@
-version: '3'
-services:
-  ciscolive-singlepage-compose:
-    image: sabaroof/ciscolive2022:singlepage
-    command: /bin/bash -c "nginx -g 'daemon off;'"
-    ports:
-      - 80:80
-
-

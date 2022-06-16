@@ -1,6 +1,6 @@
-apic_creds: {user: "CLUS-user01", pass: "{{ apic_user01 }}"}
+apic_creds: {user: "CLUS-userXX", pass: "{{ apic_user }}"}  #change this according to your details
 apic_host: 198.19.202.66
-apic_tenant: CLUS-user01
+apic_tenant: CLUS-userXX #change this according to your details
 apic_vrf: CLUS_VRF
 apic_vmm: nyc-dvs
 apic_lag: nyc-lag
@@ -9,5 +9,4 @@ apic_bd_singlepage_gw: 30.0.1.1
 apic_bd_singlepage_gw_mask: 24
 apic_bd_singlepage_subnet_name: singlepage_subnet
 apic_epg_singlepage: EPG_Singlepage
-apic_ap: CLUS_user01_AP
-
+apic_ap: CLUS_AP

@@ -1,4 +1,4 @@
-- name: Stretch the cloud tenant to an on prem site
+- name: Attaching cloud tenant to an on prem site
   cisco.mso.mso_tenant_site:
     host: '{{ ndo_host }}'
     username: '{{ ndo_creds.user }}'

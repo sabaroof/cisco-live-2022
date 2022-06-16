@@ -1,10 +1,12 @@
-vc_creds: {user: "msabadac@vsphere.local", pass: "{{ vc_user01 }}"}
+vc_creds: {user: "aciadmin@vsphere.local", pass: "{{ vc_user }}"}
 vc_host: 198.19.202.251
 vc_datacenter: NYC
-vc_prodvm: CLUS_User02_ProdVM
-vc_prodvm_mac_frontend: 00:50:56:ad:91:6a
-vc_pg_frontend: CLUS-user01|CLUS_user01_AP|EPG_Frontend
-vc_prodvm_mac_backend: 00:50:56:ad:1c:c4
-vc_pg_backend: CLUS-user01|CLUS_user01_AP|EPG_Backend
-vc_prodvm_mac_db: 00:50:56:ad:44:b5
-vc_pg_db: CLUS-user01|CLUS_user01_AP|EPG_DB
+vc_prodvm: CLUS_UserXX_ProdVM #change this according to your details
+vc_prodvm_mac_frontend: XX:XX:XX:XX:XX:XX #change this according to your details
+vc_pg_frontend: Cisco_Live_TENANT_XX|CLUS_ANP|EPG_Frontend #change this according to your details
+vc_prodvm_mac_backend: XX:XX:XX:XX:XX:XX #change this according to your details
+vc_pg_backend: Cisco_Live_TENANT_XX|CLUS_ANP|EPG_Backend #change this according to your details
+vc_prodvm_mac_db: XX:XX:XX:XX:XX:XX #change this according to your details
+vc_pg_db: Cisco_Live_TENANT_XX|CLUS_ANP|EPG_DB #change this according to your details
+vc_testvm: CLUS_UserXX_TestVM #change this according to your details
+vc_testvm_mac_frontend: XX:XX:XX:XX:XX:XX #change this according to your details

@@ -12,7 +12,6 @@
         password: '{{ apic_creds.pass }}'
         state: present
         export_policy: '{{ apic_tenant }}'
-        #max_count: 10
-        description: Backups taken before new configs are applied.
+        description: Pipeline-generated backups
         validate_certs: false
       delegate_to: localhost
